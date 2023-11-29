@@ -1,0 +1,74 @@
+1. Synopsis:
+The schema is designed to facilitate the management of medical appointments between patients and doctors within a hospital environment. 
+
+2. Entities:
+2.1. Hospital
+Represents a hospital where patients can schedule appointments with doctors.
+
+Attributes:
+1) name - The hospital's name. (Data type: string)
+2) address - The hospital's location address. (Data type: string)
+
+Relations:
+1) location - Zero-to-many rooms can be found within a hospital.
+
+
+
+2.2. Room
+Represents a room within a hospital where a doctor can be located.
+
+Attributes:
+1) number - A room's unique identifier number. (Data type: int)
+2) floor - The floor level where the room is situated, with the ground floor represented as 0. (Data type: int)
+
+Relations:
+1) location - A room is situated within exactly one hospital.
+2) residence - A room may or may not have a doctor residing in it.
+
+
+
+2.3. Appointment
+Represents an appointment between a doctor and a patient.
+
+Attributes:
+1) reason - The reason for scheduling the appointment. (Data type: string)
+2) time - The date and time when the appointment occurs. (Data type: datetime)
+
+Relations:
+1) doctor - Exactly one doctor participates in an appointment.
+2) patient - Exactly one patient participates in an appointment.
+
+
+
+2.4. Person
+An abstract class inherited by the Patient and Doctor classes.
+
+Attributes:
+1) firstName - The person's given or first name. (Data type: string)
+2) lastName - The person's family or last name. (Data type: string)
+
+Relations:
+- No relations
+
+
+
+2.5. Doctor
+A class inheriting from Person. A doctor resides inside a hospital room and can schedule appointments with Patients
+
+Attributes:
+1) degree[0..*] - Represents the degrees the doctor has obtained
+
+Relations:
+1) doctor - A doctor can have zero-to-many appointments (with patients).
+2) resides - A doctor resides inside exactly one room.
+
+
+
+2.6. Patient
+A class inheriting from Person. Represents a patient that can schedule appointments with Doctors.
+
+Attributes:
+1) nationalIdNumber - The national identification number assigned to an individual. (Data type: int)
+
+Relations:
+1) patient - A patient can schedule zero-to-many appointments (with doctors).

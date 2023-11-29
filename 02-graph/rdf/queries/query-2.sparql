@@ -1,0 +1,13 @@
+PREFIX foaf: <https://xmls.com/foaf/0.1/> 
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#> 
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX ex: <http://example.org/vocabulary/> 
+PREFIX ex2: <https://example.org/resource/> 
+
+# All patients that have the reason of appointment "Chronic dehydration"
+SELECT ?patient WHERE {
+    ?appointment a ex:Appointment ;
+        ex:reason "Chronic dehydration"@cs .
+    ?appointment ex:patient ?patient .
+}

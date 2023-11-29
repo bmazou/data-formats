@@ -1,0 +1,240 @@
+@prefix foaf: <https://xmls.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/vocabulary/> .
+@prefix ex2: <https://example.org/resource/> .
+
+#Vocabulary
+ex:Hospital a rdfs:Class ;
+    rdfs:label "Hospital"@en ;
+    rdfs:comment "A hospital complex."@en .
+
+ex:Room a rdfs:Class ;
+    rdfs:label "Room"@en ;
+    rdfs:comment "A room in a building."@en .
+
+ex:Appointment a rdfs:Class ;
+    rdfs:label "Appointment"@en ;
+    rdfs:comment "A scheduled appointment."@en .
+
+ex:Doctor a rdfs:Class ;
+    rdfs:subClassOf foaf:Person ;
+    rdfs:label "Doctor"@en ;
+    rdfs:comment "A doctor tied to the appointment."@en .
+
+ex:Patient a rdfs:Class ;
+    rdfs:subClassOf foaf:Person ;
+    rdfs:label "Patient"@en ;
+    rdfs:comment "A patient that scheduled the appointment."@en .
+
+
+#   Doctor
+ex:degree a rdf:Property ;
+    rdfs:label "Degree"@en ;
+    rdfs:comment "A scholar degree"@en ;
+    rdfs:domain ex:Doctor ;
+    rdfs:range rdf:langString .
+
+#   Patient
+ex:nationalIdNumber a rdf:Property ;
+    rdfs:label "National ID Number"@en ;
+    rdfs:comment "A national member identification number."@en ;
+    rdfs:domain ex:Patient ;
+    rdfs:range xsd:integer .
+
+#   Appointment
+ex:reason a rdf:Property ;
+    rdfs:label "Reason"@en ;
+    rdfs:comment "A reason of the appointment."@en ;
+    rdfs:domain ex:Appointment ;
+    rdfs:range rdf:langString .
+
+ex:time a rdf:Property ;
+    rdfs:label "Time"@en ;
+    rdfs:comment "A time of an appointment."@en ;
+    rdfs:domain ex:Appointment ;
+    rdfs:range xsd:dateTime .
+
+#   Room
+ex:number a rdf:Property ;
+    rdfs:label "Number"@en ;
+    rdfs:comment "A room number."@en ;
+    rdfs:domain ex:Room ;
+    rdfs:range xsd:integer .
+
+#   Hospital
+ex:name a rdf:Property ;
+    rdfs:label "Name"@en ;
+    rdfs:comment "A hospital name."@en ;
+    rdfs:domain ex:Hospital ;
+    rdfs:range rdf:langString .
+
+
+# Associations
+#   Appointment
+ex:doctor a rdf:Property ;
+    rdfs:label "doctor"@en ;
+    rdfs:comment "A doctor overseeing the appointment."@en ;
+    rdfs:domain ex:Appointment ;
+    rdfs:range ex:Doctor .
+
+ex:patient a rdf:Property ;
+    rdfs:label "patient"@en ;
+    rdfs:comment "A patient that scheduled the appointment."@en ;
+    rdfs:domain ex:Appointment ;
+    rdfs:range ex:Patient .
+
+#   Doctor
+ex:residence a rdf:Property ;
+    rdfs:label "residence"@en ;
+    rdfs:comment "A room where doctor resides."@en ;
+    rdfs:domain ex:Doctor ;
+    rdfs:range ex:Room .
+
+#   Room
+ex:location a rdf:Property ;
+    rdfs:label "location"@en ;
+    rdfs:comment "Connection of a room and a Hospital complex."@en ;
+    rdfs:domain ex:Room ;
+    rdfs:range ex:Hospital .
+
+#Instances
+#Hospitals
+ex2:hos1 a ex:Hospital ;
+    ex:name "Zlatá Nemocnice"@cs ;
+    ex:adress "Československé armády 13, 160 00 Praha 6"@cs .
+
+ex2:hos2 a ex:Hospital ;
+    ex:name "Červený Vrcholek"@cs ;
+    ex:adress "Bubenečská 6, 160 00 Praha 6"@cs .
+
+ex2:hos3 a ex:Hospital ;
+    ex:name "Nová Šachta"@cs ;
+    ex:adress "Budečská 933, 120 00 Praha 2"@cs .
+
+#Rooms
+ex2:room1 a ex:Room ;
+    ex:number 110 ;
+    ex:floor 0  .
+
+ex2:room2 a ex:Room ;
+    ex:number 120 ;
+    ex:floor 0  .
+
+ex2:room3 a ex:Room ;
+    ex:number 210 ;
+    ex:floor 0  .
+
+ex2:room4 a ex:Room ;
+    ex:number 221 ;
+    ex:floor 1  .
+
+ex2:room5 a ex:Room ;
+    ex:number 310 ;
+    ex:floor 0  .
+
+ex2:room6 a ex:Room ;
+    ex:number 321 ;
+    ex:floor 1  .
+
+#Doctors
+ex2:mantis a ex:Doctor ;
+    foaf:firstName "Mantis"@cs ;
+    foaf:familyName "Toboggan"@cs ;
+    ex:degree "MD"@cs .
+
+ex2:lyria a ex:Doctor ;
+    foaf:firstName "Lyria"@cs ;
+    foaf:familyName "O'Lagalos"@cs ;
+    ex:degree "MD"@cs, "PhD"@cs .
+    
+ex2:milo a ex:Doctor ;
+    foaf:firstName "Milo"@cs ;
+    foaf:familyName "Minderbinder"@cs ;
+    ex:degree "MPH"@cs.
+    
+ex2:finree a ex:Doctor ;
+    foaf:firstName "Finree"@cs ;
+    foaf:familyName "Brock"@cs ;
+    ex:degree "MD"@cs, "MPH"@cs .
+    
+ex2:mallet a ex:Doctor ;
+    foaf:firstName "Mallet"@cs ;
+    foaf:familyName "Bridge"@cs ;
+    ex:degree "MD"@cs .
+
+#Pacients  
+ex2:caul a ex:Patient;
+    foaf:firstName "Caul"@cs ;
+    foaf:familyName "Shivers"@cs ;
+    ex:nationalIdNumber 7248950316 .
+
+ex2:nicomo a ex:Patient;
+    foaf:firstName "Nicomo"@cs ;
+    foaf:familyName "Cosca"@cs ;
+    ex:nationalIdNumber 5082179643 .
+
+ex2:leo a ex:Patient;
+    foaf:firstName "Leo"@cs ;
+    foaf:familyName "Brock"@cs ;
+    ex:nationalIdNumber 1357924680 .
+
+ex2:felisin a ex:Patient;
+    foaf:firstName "Felisin"@cs ;
+    foaf:familyName "Paran"@cs ;
+    ex:nationalIdNumber 2468013579 .
+
+ex2:heboric a ex:Patient;
+    foaf:firstName "Heboric"@cs ;
+    foaf:familyName "Fener"@cs ;
+    ex:nationalIdNumber 3579246801 .
+
+#Appointment
+ex2:app1 a ex:Appointment ;
+    ex:reason "Eye injury"@cs ;
+    xsd:dateTime "2023-02-04T10:00:00"^^xsd:dateTime .
+
+ex2:app2 a ex:Appointment ;
+    ex:reason "Regular checkup regarding liver disease"@cs ;
+    xsd:dateTime "2023-10-03T14:00:00"^^xsd:dateTime .
+
+ex2:app3 a ex:Appointment ;
+    ex:reason "Injured leg"@cs ;
+    xsd:dateTime "2023-03-03T09:00:00"^^xsd:dateTime .
+
+ex2:app4 a ex:Appointment ;
+    ex:reason "Chronic dehydration"@cs ;
+    xsd:dateTime "2023-10-05T16:00:00"^^xsd:dateTime .
+
+ex2:app5 a ex:Appointment ;
+    ex:reason "Severed hand"@cs ;
+    xsd:dateTime "2023-04-02T15:00:00"^^xsd:dateTime .
+
+ex2:app1 ex:patient ex2:caul ;
+    ex:doctor ex2:mantis .
+
+ex2:app2 ex:patient ex2:nicomo ;
+    ex:doctor ex2:mantis .
+
+ex2:app3 ex:patient ex2:leo ;
+    ex:doctor ex2:finree .
+
+ex2:app4 ex:patient ex2:felisin ;
+    ex:doctor ex2:lyria .
+
+ex2:app5 ex:patient ex2:heboric ;
+    ex:doctor ex2:mallet .
+
+ex2:mantis ex:residence ex2:room1 .
+ex2:lyria ex:residence ex2:room2 .
+ex2:milo ex:residence ex2:room3 .
+ex2:finree ex:residence ex2:room4 .
+ex2:mallet ex:residence ex2:room5 .
+
+ex2:room1 ex:location ex2:hos1 .
+ex2:room2 ex:location ex2:hos1 .
+ex2:room3 ex:location ex2:hos2 .
+ex2:room4 ex:location ex2:hos2 .
+ex2:room5 ex:location ex2:hos3 .
+ex2:room6 ex:location ex2:hos3 .
