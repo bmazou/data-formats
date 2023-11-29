@@ -1,0 +1,76 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "http://example.org/vocabulary/schema-1.json",
+    "$defs": {
+        "person": {
+            "type": "object",
+            "properties": {
+                "firstName": { "type": "string" },
+                "lastName": { "type": "string" }
+            },
+            "required": ["firstName", "lastName"]
+        }
+    },
+
+
+    "title": "Patient",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "#/$defs/person"
+        },
+        {
+            "properties": {
+                "nationalIdNumber": {
+                    "type": "number"
+                },
+                "appointments": {
+                    "type": "array",
+                    "items": {
+                        "title": "Appointment",
+                        "type": "object",
+                        "properties": {
+                            "reason": {
+                                "type": "string"
+                            },
+                            "time": {
+                                "type": "string"
+                            },
+                            "doctor": {
+                                "type": "object",
+                                "title": "Doctor",
+                                "allOf": [
+                                    {
+                                        "$ref": "#/$defs/person"
+                                    },
+                                    {
+                                        "properties": {
+                                            "degree": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "required": [
+                                            "degree"
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "required": [
+                            "reason",
+                            "time",
+                            "doctor"
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "nationalIdNumber",
+                "appointments"
+            ]
+        }
+    ]
+}
