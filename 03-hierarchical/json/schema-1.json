@@ -12,65 +12,68 @@
         }
     },
 
-
-    "title": "Patient",
-    "type": "object",
-    "allOf": [
-        {
-            "$ref": "#/$defs/person"
-        },
-        {
-            "properties": {
-                "nationalIdNumber": {
-                    "type": "number"
-                },
-                "appointments": {
-                    "type": "array",
-                    "items": {
-                        "title": "Appointment",
-                        "type": "object",
-                        "properties": {
-                            "reason": {
-                                "type": "string"
-                            },
-                            "time": {
-                                "type": "string"
-                            },
-                            "doctor": {
-                                "type": "object",
-                                "title": "Doctor",
-                                "allOf": [
-                                    {
-                                        "$ref": "#/$defs/person"
-                                    },
-                                    {
-                                        "properties": {
-                                            "degree": {
-                                                "type": "array",
-                                                "items": {
-                                                    "type": "string"
-                                                }
-                                            }
-                                        },
-                                        "required": [
-                                            "degree"
-                                        ]
-                                    }
-                                ]
-                            }
-                        },
-                        "required": [
-                            "reason",
-                            "time",
-                            "doctor"
-                        ]
-                    }
-                }
+    "type": "array",
+    "title": "Patients",
+    "items": {
+        "title": "Patient",
+        "type": "object",
+        "allOf": [
+            {
+                "$ref": "#/$defs/person"
             },
-            "required": [
-                "nationalIdNumber",
-                "appointments"
-            ]
-        }
-    ]
+            {
+                "properties": {
+                    "nationalIdNumber": {
+                        "type": "number"
+                    },
+                    "appointments": {
+                        "type": "array",
+                        "items": {
+                            "title": "Appointment",
+                            "type": "object",
+                            "properties": {
+                                "reason": {
+                                    "type": "string"
+                                },
+                                "time": {
+                                    "type": "string"
+                                },
+                                "doctor": {
+                                    "type": "object",
+                                    "title": "Doctor",
+                                    "allOf": [
+                                        {
+                                            "$ref": "#/$defs/person"
+                                        },
+                                        {
+                                            "properties": {
+                                                "degree": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "degree"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "reason",
+                                "time",
+                                "doctor"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "nationalIdNumber",
+                    "appointments"
+                ]
+            }
+        ]
+    }
 }

@@ -1,60 +1,75 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "http://example.org/vocabulary/schema-2.json",
-    "title": "Hospital",
-    "type": "object",
-    "properties": {
-        "name": {
-            "type": "string"
-        },
-        "address": {
-            "type": "string"
-        },
-        "rooms": {
-            "type": "array",
-            "items": {
-                "title": "Room",
-                "type": "object",
-                "properties": {
-                    "number": {
-                        "type": "number"
-                    },
-                    "floor": {
-                        "type": "number"
-                    },
-                    "doctor": {
-                        "title": "Doctor",
-                        "type": "object",
-                        "allOf": [
-                            {
-                                "$ref": "https://xmls.com/foaf/0.1/Person" 
-                            },
-                            {
-                                "properties": {
-                                    "degree": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "string"
-                                        }
-                                    }
-                                },
-                                "required": [
-                                    "degree"
-                                ]
-                            }
-                        ]
-                    }
-                },
-                "required": [
-                    "number",
-                    "floor"
-                ]
-            }
+    "$defs": {
+        "person": {
+            "type": "object",
+            "properties": {
+                "firstName": { "type": "string" },
+                "lastName": { "type": "string" }
+            },
+            "required": ["firstName", "lastName"]
         }
     },
-    "required": [
-        "name",
-        "address",
-        "rooms"
-    ]
+
+    "type": "array",
+    "title": "Hospitals",
+    "items": {
+        "title": "Hospital",
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string"
+            },
+            "address": {
+                "type": "string"
+            },
+            "rooms": {
+                "type": "array",
+                "items": {
+                    "title": "Room",
+                    "type": "object",
+                    "properties": {
+                        "number": {
+                            "type": "number"
+                        },
+                        "floor": {
+                            "type": "number"
+                        },
+                        "doctor": {
+                            "title": "Doctor",
+                            "type": "object",
+                            "allOf": [
+                                {
+                                    "$ref": "#/$defs/person"
+                                },
+                                {
+                                    "properties": {
+                                        "degree": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "required": [
+                                        "degree"
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    "required": [
+                        "number",
+                        "floor"
+                    ]
+                }
+            }
+        },
+        "required": [
+            "name",
+            "address",
+            "rooms"
+        ]
+    }
 }
