@@ -1,80 +1,149 @@
 [
     {
-        "firstName": "Caul",
-        "lastName": "Shivers",
+        "firstName": {
+            "cs": "Caul"
+        },
+        "lastName": {
+            "cs": "Shivers"
+        },
         "nationalIdNumber": 7248950316,
         "appointments": [
             {
-                "reason": "Eye injury",
+                "reason": {
+                    "cs": "Eye injury"
+                },
                 "time": "2023-02-04T10:00:00",
                 "doctor": {
-                    "firstName": "Mantis",
-                    "lastName": "Toboggan",
-                    "degree": ["MD"]
+                    "firstName": {
+                        "cs": "Mantis"
+                    },
+                    "lastName": {
+                        "cs": "Toboggan"
+                    },
+                    "degree": [{
+                        "cs": "MD"
+                    }]
                 }
             }
         ]
     },
     {
-        "firstName": "Nicomo",
-        "lastName": "Cosca",
+        "firstName": {
+            "cs": "Nicomo"
+        },
+        "lastName": {
+            "cs": "Cosca"
+        },
         "nationalIdNumber": 5082179643,
         "appointments": [
             {
-                "reason": "Regular checkup regarding liver disease",
+                "reason": {
+                    "cs": "Regular checkup regarding liver disease"
+                },
                 "time": "2023-10-03T14:00:00",
                 "doctor": {
-                    "firstName": "Mantis",
-                    "lastName": "Toboggan",
-                    "degree": ["MD"]
+                    "firstName": {
+                        "cs": "Mantis"
+                    },
+                    "lastName": {
+                        "cs": "Toboggan"
+                    },
+                    "degree": [{
+                            "cs": "MD"
+                        }
+                    ]
                 }
             }
         ]
     },
     {
-        "firstName": "Leo",
-        "lastName": "Brock",
+        "firstName": {
+            "cs": "Leo"
+        },
+        "lastName": {
+            "cs": "Brock"
+        },
         "nationalIdNumber": 1357924680,
         "appointments": [
             {
-                "reason": "Injured leg",
+                "reason": {
+                    "cs": "Injured leg"
+                },
                 "time": "2023-03-03T09:00:00",
                 "doctor": {
-                    "firstName": "Finree",
-                    "lastName": "Brock",
-                    "degree": ["MD","MPH"]
+                    "firstName": {
+                        "cs": "Finree"
+                    },
+                    "lastName": {
+                        "cs": "Brock"
+                    },
+                    "degree": [{
+                            "cs": "MD"
+                        },
+                        {
+                            "cs": "MPH"
+                        }
+                    ]
                 }
             }
         ]
     },
     {
-        "firstName": "Felisin",
-        "lastName": "Paran",
+        "firstName": {
+            "cs": "Felisin"
+        },
+        "lastName": {
+            "cs": "Paran"
+        },
         "nationalIdNumber": 2468013579,
         "appointments": [
             {
-                "reason": "Chronic dehydration",
+                "reason": {
+                    "cs": "Chronic dehydration"
+                },
                 "time": "2023-10-05T16:00:00",
                 "doctor": {
-                    "firstName": "Lyria",
-                    "lastName": "O'Lagalos",
-                    "degree": ["MD","PhD"]
+                    "firstName": {
+                        "cs": "Lyria"
+                    },
+                    "lastName": {
+                        "cs": "O'Lagalos"
+                    },
+                    "degree": [{
+                            "cs": "MD"
+                        },
+                        {
+                            "cs": "PhD"
+                        }
+                    ]
                 }
             }
         ]
     },
     {
-        "firstName": "Heboric",
-        "lastName": "Fener",
+        "firstName": {
+            "cs": "Heboric"
+        },
+        "lastName": {
+            "cs": "Fener"
+        },
         "nationalIdNumber": 3579246801,
         "appointments": [
             {
-                "reason": "Severed hand",
+                "reason": {
+                    "cs": "Severed hand"
+                },
                 "time": "2023-04-02T15:00:00",
                 "doctor": {
-                    "firstName": "Mallet",
-                    "lastName": "Bridge",
-                    "degree": ["MD"]
+                    "firstName": {
+                        "cs": "Mallet"
+                    },
+                    "lastName": {
+                        "cs": "Bridge"
+                    },
+                    "degree": [{
+                        "cs": "MD"
+                    }]
                 }
             }
         ]
