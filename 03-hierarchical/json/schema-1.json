@@ -26,7 +26,7 @@
         },
         "person": {
             "type": "object",
-            "title": "Person"
+            "title": "Person",
             "required": ["firstName", "lastName"],
             "properties": {
                 "firstName": {
