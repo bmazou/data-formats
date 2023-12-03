@@ -23,7 +23,7 @@
                 }
             },
             {
-                "number": 210,
+                "number": 120,
                 "floor": 0,
                 "doctor": {
                     "firstName": {
@@ -50,7 +50,7 @@
         },
         "rooms": [
             {
-                "number": 120,
+                "number": 210,
                 "floor": 0,
                 "doctor": {
                     "firstName": {
