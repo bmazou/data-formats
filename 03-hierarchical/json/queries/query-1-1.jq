@@ -1,0 +1,1 @@
+.[] | { time: .appointments[].time, reason: .appointments[].reason, doctor: (.appointments[].doctor.firstName + " " + .appointments[].doctor.lastName), patient: (.firstName + " " + .lastName)}

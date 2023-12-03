@@ -1,0 +1,1 @@
+.[] | {name, address, doctorCount: (.rooms | map(select(.doctor)) | length)}

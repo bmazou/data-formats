@@ -1,0 +1,1 @@
+.[] | select(.name == "Zlatá Nemocnice").rooms[] | select(.doctor.degree | index("MD")).doctor

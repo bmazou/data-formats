@@ -1,0 +1,1 @@
+.[] | .appointments[] | select(.time >= "2023-03-01") | {time, reason}
