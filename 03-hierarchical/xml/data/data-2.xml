@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Hospitals xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/schema-2.xsd">
+    <Hospital>
+        <name xml:lang="cs">Zlatá Nemocnice</name>
+        <address xml:lang="cs">Československé armády 13, 160 00 Praha 6</address>
+        <rooms>
+            <Room>
+                <number>110</number>
+                <floor>0</floor>
+                <doctor>
+                    <firstName xml:lang="cs">Mantis</firstName>
+                    <lastName xml:lang="cs">Toboggan</lastName>
+                    <degrees>
+                        <degree xml:lang="cs">MD</degree>
+                    </degrees>
+                </doctor>
+            </Room>
+            <Room>
+                <number>120</number>
+                <floor>0</floor>
+                <doctor>
+                    <firstName xml:lang="cs">Lyria</firstName>
+                    <lastName xml:lang="cs">O'Lagalos</lastName>
+                    <degrees>
+                        <degree xml:lang="cs">MD</degree>
+                        <degree xml:lang="cs">PhD</degree>
+                    </degrees>
+                </doctor>
+            </Room>
+        </rooms>
+    </Hospital>
+    <Hospital>
+        <name xml:lang="cs">Červený Vrcholek</name>
+        <address xml:lang="cs">Československé armády 13, 160 00 Praha 6</address>
+        <rooms>
+            <Room>
+                <number>210</number>
+                <floor>0</floor>
+                <doctor>
+                    <firstName xml:lang="cs">Milo</firstName>
+                    <lastName xml:lang="cs">Minderbinder</lastName>
+                    <degrees>
+                        <degree xml:lang="cs">MPH</degree>
+                    </degrees>
+                </doctor>
+            </Room>
+            <Room>
+                <number>221</number>
+                <floor>1</floor>
+                <doctor>
+                    <firstName xml:lang="cs">Finree</firstName>
+                    <lastName xml:lang="cs">Brock</lastName>
+                    <degrees>
+                        <degree xml:lang="cs">MD</degree>
+                        <degree xml:lang="cs">MPH</degree>
+                    </degrees>
+                </doctor>
+            </Room>
+        </rooms>
+    </Hospital>
+    <Hospital>
+        <name xml:lang="cs">Nová Šachta</name>
+        <address xml:lang="cs">Budečská 933, 120 00 Praha 2</address>
+        <rooms>
+            <Room>
+                <number>310</number>
+                <floor>0</floor>
+                <doctor>
+                    <firstName xml:lang="cs">Mallet</firstName>
+                    <lastName xml:lang="cs">Bridge</lastName>
+                    <degrees>
+                        <degree xml:lang="cs">MD</degree>
+                    </degrees>
+                </doctor>
+            </Room>
+            <Room>
+                <number>321</number>
+                <floor>1</floor>
+            </Room>
+        </rooms>
+    </Hospital>
+</Hospitals>

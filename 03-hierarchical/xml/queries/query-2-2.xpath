@@ -1,0 +1,2 @@
+(:Doctors located on ground floor or lower:)
+//Room[floor/text() <= 0]/doctor/concat(lastName/text(), " ", firstName/text())

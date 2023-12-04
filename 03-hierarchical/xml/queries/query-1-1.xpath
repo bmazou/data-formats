@@ -1,0 +1,2 @@
+(:Last name of patiens with appointment with reason containing keyword injury:)
+//Patient[contains(lower-case(appointments/Appointment/reason),"injury")]/lastName/text()

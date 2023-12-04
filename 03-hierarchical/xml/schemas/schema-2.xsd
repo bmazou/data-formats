@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:foaf="https://xmls.com/foaf/0.1/">
+<xs:import namespace="http://www.w3.org/XML/1998/namespace"
+        schemaLocation="https://www.w3.org/2009/01/xml.xsd" />
+    <xs:complexType name="langstring">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute ref="xml:lang" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:element name="Hospitals">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Hospital" maxOccurs="unbounded" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name"
+                                        type="langstring" />
+                            <xs:element name="address"
+                                        type="langstring" />
+                            <xs:element name="rooms">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Room"
+                                                    minOccurs="0" maxOccurs="unbounded" >
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="number"
+                                                                type="xs:int" />
+                                                    <xs:element name="floor"
+                                                                type="xs:int" />
+                                                    <xs:element name="doctor" minOccurs="0" maxOccurs="1">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="firstName" 
+                                                                            type="langstring"/>
+                                                                <xs:element name="lastName" 
+                                                                            type="langstring"/>
+                                                                <xs:element name="degrees">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="degree"
+                                                                                        type="langstring"
+                                                                                        minOccurs="0"
+                                                                                        maxOccurs="unbounded" />
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>  
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

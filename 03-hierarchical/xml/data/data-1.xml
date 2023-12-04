@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patients xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../schemas/schema-1.xsd">
+    <Patient>
+        <firstName xml:lang="cs">Caul</firstName>
+        <lastName xml:lang="cs">Shivers</lastName>
+        <nationalIdNumber>7248950316</nationalIdNumber>
+        <appointments>
+            <Appointment>
+                <nof>1</nof>
+                <reason xml:lang="cs">Eye injury</reason>
+                <time>2023-02-04T10:00:00</time>
+                <doctor>
+                    <firstName xml:lang="cs">Mantis</firstName>
+                    <lastName xml:lang="cs">Toboggan</lastName>
+                    <degrees>
+                        <degree xml:lang="cs">MD</degree>
+                    </degrees>
+                </doctor>
+            </Appointment>
+        </appointments>
+    </Patient>
+    <Patient>
+        <firstName xml:lang="cs">Nicomo</firstName>
+        <lastName xml:lang="cs">Cosca</lastName>
+        <nationalIdNumber>5082179643</nationalIdNumber>
+        <appointments>
+            <Appointment>
+                <nof>2</nof>
+                <reason xml:lang="cs">Regular checkup regarding liver disease</reason>
+                <time>2023-10-03T14:00:00</time>
+                <doctor>
+                    <firstName xml:lang="cs">Mantis</firstName>
+                    <lastName xml:lang="cs">Toboggan</lastName>
+                    <degrees>
+                        <degree xml:lang="cs">MD</degree>
+                    </degrees>
+                </doctor>
+            </Appointment>
+        </appointments>
+    </Patient>
+    <Patient>
+        <firstName xml:lang="cs">Leo</firstName>
+        <lastName xml:lang="cs">Brock</lastName>
+        <nationalIdNumber>1357924680</nationalIdNumber>
+        <appointments>
+            <Appointment>
+                <nof>3</nof>
+                <reason xml:lang="cs">Injured leg</reason>
+                <time>2023-03-03T09:00:00</time>
+                <doctor>
+                    <firstName xml:lang="cs">Finree</firstName>
+                    <lastName xml:lang="cs">Brock</lastName>
+                    <degrees>
+                        <degree xml:lang="cs">MD</degree>
+                        <degree xml:lang="cs">MPH</degree>
+                    </degrees>
+                </doctor>
+            </Appointment>
+        </appointments>
+    </Patient>
+    <Patient>
+        <firstName xml:lang="cs">Felisin</firstName>
+        <lastName xml:lang="cs">Paran</lastName>
+        <nationalIdNumber>2468013579</nationalIdNumber>
+        <appointments>
+            <Appointment>
+                <nof>4</nof>
+                <reason xml:lang="cs">Chronic dehydration</reason>
+                <time>2023-10-05T16:00:00</time>
+                <doctor>
+                    <firstName xml:lang="cs">Lyria</firstName>
+                    <lastName xml:lang="cs">O'Lagalos</lastName>
+                    <degrees>
+                        <degree xml:lang="cs">MD</degree>
+                        <degree xml:lang="cs">PhD</degree>
+                    </degrees>
+                </doctor>
+            </Appointment>
+        </appointments>
+    </Patient>
+    <Patient>
+        <firstName xml:lang="cs">Heboric</firstName>
+        <lastName xml:lang="cs">Fener</lastName>
+        <nationalIdNumber>3579246801</nationalIdNumber>
+        <appointments>
+            <Appointment>
+                <nof>5</nof>
+                <reason xml:lang="cs">Severed hand</reason>
+                <time>2023-04-02T15:00:00</time>
+                <doctor>
+                    <firstName xml:lang="cs">Mallet</firstName>
+                    <lastName xml:lang="cs">Bridge</lastName>
+                    <degrees>
+                        <degree xml:lang="cs">MD</degree>
+                    </degrees>
+                </doctor>
+            </Appointment>
+        </appointments>
+    </Patient>
+</Patients>

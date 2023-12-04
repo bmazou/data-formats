@@ -1,0 +1,2 @@
+(:Doctors with appointment date earlier then 1.4.2023:)
+//doctor[xs:dateTime(../time/text()) < xs:dateTime("2023-04-01T00:00:00")]/lastName/text()

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:foaf="https://xmls.com/foaf/0.1/">
+<xs:import namespace="http://www.w3.org/XML/1998/namespace"
+        schemaLocation="https://www.w3.org/2009/01/xml.xsd" />
+    <xs:complexType name="langstring">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute ref="xml:lang" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:element name="Patients">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Patient" maxOccurs="unbounded" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="firstName" 
+                                        type="langstring" />
+                            <xs:element name="lastName"
+                                        type="langstring" />
+                            <xs:element name="nationalIdNumber"
+                                        type="xs:long" />
+                            <xs:element name="appointments">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Appointment"
+                                                    minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="nof" 
+                                                                type="xs:int"/>
+                                                    <xs:element name="reason"
+                                                                type="langstring" />
+                                                    <xs:element name="time"
+                                                                type="xs:dateTime" />
+                                                    <xs:element name="doctor">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="firstName" 
+                                                                            type="langstring"/>
+                                                                <xs:element name="lastName" 
+                                                                            type="langstring"/>
+                                                                <xs:element name="degrees">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="degree"
+                                                                                        type="langstring"
+                                                                                        minOccurs="0"
+                                                                                        maxOccurs="unbounded" />
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

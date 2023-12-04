@@ -1,0 +1,98 @@
+
+@prefix foaf: <https://xmls.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/vocabulary/> .
+@prefix ex2: <https://example.org/resource/> .
+
+    
+<ex2:caul> a ex:Patient;
+    foaf:firstName "Caul"@cs ;
+    foaf:familyName "Shivers"@cs ;
+    ex:nationalIdNumber 7248950316 .
+    
+<ex2:app1> a ex:Appointment;
+    ex:Reason "Eye injury"@cs ;
+    xsd:dateTime "2023-02-04T10:00:00"^^xsd:dateTime .
+        
+<ex2:mantis> a ex:Doctor;
+    foaf:firstName "Mantis"@cs ;
+    foaf:familyName "Toboggan"@cs ;
+    ex:degree "MD"@cs . 
+    
+ex2:app1 ex:patient ex2:caul ;
+    ex:doctor ex2:mantis .
+    
+    
+<ex2:nicomo> a ex:Patient;
+    foaf:firstName "Nicomo"@cs ;
+    foaf:familyName "Cosca"@cs ;
+    ex:nationalIdNumber 5082179643 .
+    
+<ex2:app2> a ex:Appointment;
+    ex:Reason "Regular checkup regarding liver disease"@cs ;
+    xsd:dateTime "2023-10-03T14:00:00"^^xsd:dateTime .
+        
+<ex2:mantis> a ex:Doctor;
+    foaf:firstName "Mantis"@cs ;
+    foaf:familyName "Toboggan"@cs ;
+    ex:degree "MD"@cs . 
+    
+ex2:app2 ex:patient ex2:nicomo ;
+    ex:doctor ex2:mantis .
+    
+    
+<ex2:leo> a ex:Patient;
+    foaf:firstName "Leo"@cs ;
+    foaf:familyName "Brock"@cs ;
+    ex:nationalIdNumber 1357924680 .
+    
+<ex2:app3> a ex:Appointment;
+    ex:Reason "Injured leg"@cs ;
+    xsd:dateTime "2023-03-03T09:00:00"^^xsd:dateTime .
+        
+<ex2:finree> a ex:Doctor;
+    foaf:firstName "Finree"@cs ;
+    foaf:familyName "Brock"@cs ;
+    ex:degree "MD"@cs, "MPH"@cs . 
+    
+ex2:app3 ex:patient ex2:leo ;
+    ex:doctor ex2:finree .
+    
+    
+<ex2:felisin> a ex:Patient;
+    foaf:firstName "Felisin"@cs ;
+    foaf:familyName "Paran"@cs ;
+    ex:nationalIdNumber 2468013579 .
+    
+<ex2:app4> a ex:Appointment;
+    ex:Reason "Chronic dehydration"@cs ;
+    xsd:dateTime "2023-10-05T16:00:00"^^xsd:dateTime .
+        
+<ex2:lyria> a ex:Doctor;
+    foaf:firstName "Lyria"@cs ;
+    foaf:familyName "O'Lagalos"@cs ;
+    ex:degree "MD"@cs, "PhD"@cs . 
+    
+ex2:app4 ex:patient ex2:felisin ;
+    ex:doctor ex2:lyria .
+    
+    
+<ex2:heboric> a ex:Patient;
+    foaf:firstName "Heboric"@cs ;
+    foaf:familyName "Fener"@cs ;
+    ex:nationalIdNumber 3579246801 .
+    
+<ex2:app5> a ex:Appointment;
+    ex:Reason "Severed hand"@cs ;
+    xsd:dateTime "2023-04-02T15:00:00"^^xsd:dateTime .
+        
+<ex2:mallet> a ex:Doctor;
+    foaf:firstName "Mallet"@cs ;
+    foaf:familyName "Bridge"@cs ;
+    ex:degree "MD"@cs . 
+    
+ex2:app5 ex:patient ex2:heboric ;
+    ex:doctor ex2:mallet .
+    
