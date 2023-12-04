@@ -1,0 +1,226 @@
+{
+  "@context": {
+      "type": "@type",
+      "foaf": "https://xmls.com/foaf/0.1/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+      "ex": "http://example.org/vocabulary/",
+      "ex2": "https://example.org/resource/",
+
+      "firstName": {
+          "@id": "foaf:firstName",
+          "@container": "@language" 
+      },
+      "lastName": {
+          "@id": "foaf:familyName",
+          "@container": "@language" 
+      },
+      "nationalIdNumber": {
+          "@id": "ex:nationalIdNumber",
+          "@type": "xsd:integer"
+      },
+      "degree": {
+          "@id": "ex:degree",
+          "@container": "@language"
+      },
+      "reason": {
+          "@id": "ex:reason",
+          "@container": "@language"
+      },
+      "time": {
+          "@id": "ex:time",
+          "@type": "xsd:dateTime"
+      },
+
+
+      "Doctor": "ex:Doctor",
+      "Patient": "ex:Patient",
+      "Appointment": "ex:Appointment",
+
+      "appointments": {
+          "@reverse": "ex:patient"
+      },
+
+      "doctor": {
+          "@id": "ex:doctor",
+          "@type": "ex:Doctor"
+      },
+      "patient": {
+          "@id": "ex:patient",
+          "@type": "ex:Patient"
+      }
+
+  },
+  "@graph": [
+      {
+
+          "type": "Patient",
+          "@id": "ex:caul",
+          "firstName": {
+              "cs": "Caul"
+          },
+          "lastName": {
+              "cs": "Shivers"
+          },
+          "nationalIdNumber": 7248950316,
+          "appointments": [
+              {
+                  "type": "Appointment",
+                  "@id": "ex:app1",
+                  "reason": {
+                      "cs": "Eye injury"
+                  },
+                  "time": "2023-02-04T10:00:00",
+                  "doctor": {
+                      "type": "Doctor",
+                      "@id": "ex:mantis",
+                      "firstName": {
+                          "cs": "Mantis"
+                      },
+                      "lastName": {
+                          "cs": "Toboggan"
+                      },
+                      "degree": {
+                          "cs": ["MD"]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "type": "Patient",
+          "@id": "ex:nicomo",
+          "firstName": {
+              "cs": "Nicomo"
+          },
+          "lastName": {
+              "cs": "Cosca"
+          },
+          "nationalIdNumber": 5082179643,
+          "appointments": [
+              {
+                  "type": "Appointment",
+                  "@id": "ex:app2",
+                  "reason": {
+                      "cs": "Regular checkup regarding liver disease"
+                  },
+                  "time": "2023-10-03T14:00:00",
+                  "doctor": {
+                      "type": "Doctor",
+                      "@id": "ex:mantis",
+                      "firstName": {
+                          "cs": "Mantis"
+                      },
+                      "lastName": {
+                          "cs": "Toboggan"
+                      },
+                      "degree": {
+                          "cs": ["MD"]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "type": "Patient",
+          "@id": "ex:leo",
+          "firstName": {
+              "cs": "Leo"
+          },
+          "lastName": {
+              "cs": "Brock"
+          },
+          "nationalIdNumber": 1357924680,
+          "appointments": [
+              {
+                  "type": "Appointment",
+                  "@id": "ex:app3",
+                  "reason": {
+                      "cs": "Injured leg"
+                  },
+                  "time": "2023-03-03T09:00:00",
+                  "doctor": {
+                      "type": "Doctor",
+                      "@id": "ex:finree",
+                      "firstName": {
+                          "cs": "Finree"
+                      },
+                      "lastName": {
+                          "cs": "Brock"
+                      },
+                      "degree": {
+                          "cs": ["MD", "MPH"]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "type": "Patient",
+          "@id": "ex:felisin",
+          "firstName": {
+              "cs": "Felisin"
+          },
+          "lastName": {
+              "cs": "Paran"
+          },
+          "nationalIdNumber": 2468013579,
+          "appointments": [
+              {
+                  "type": "Appointment",
+                  "@id": "ex:app4",
+                  "reason": {
+                      "cs": "Chronic dehydration"
+                  },
+                  "time": "2023-10-05T16:00:00",
+                  "doctor": {
+                      "firstName": {
+                          "cs": "Lyria"
+                      },
+                      "lastName": {
+                          "cs": "O'Lagalos"
+                      },
+                      "degree": {
+                          "cs": ["MD", "PHD"]
+                      }
+                  }
+              }
+          ]
+      },
+      {
+          "type": "Patient",
+          "@id": "ex:heboric",
+          "firstName": {
+              "cs": "Heboric"
+          },
+          "lastName": {
+              "cs": "Fener"
+          },
+          "nationalIdNumber": 3579246801,
+          "appointments": [
+              {
+                  "type": "Appointment",
+                  "@id": "ex:app5",
+                  "reason": {
+                      "cs": "Severed hand"
+                  },
+                  "time": "2023-04-02T15:00:00",
+                  "doctor": {
+                      "type": "Doctor",
+                      "@id": "ex:mallet",
+                      "firstName": {
+                          "cs": "Mallet"
+                      },
+                      "lastName": {
+                          "cs": "Bridge"
+                      },
+                      "degree": {
+                          "cs": ["MD"]
+                      }
+                  }
+              }
+          ]
+      }
+  ]
+}
