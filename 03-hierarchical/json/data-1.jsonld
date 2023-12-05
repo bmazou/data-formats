@@ -55,7 +55,7 @@
   "@graph": [
       {
           "type": "Patient",
-          "@id": "ex:caul",
+          "@id": "ex2:caul",
           "firstName": {
               "cs": "Caul"
           },
@@ -66,14 +66,14 @@
           "appointments": [
               {
                   "type": "Appointment",
-                  "@id": "ex:app1",
+                  "@id": "ex2:app1",
                   "reason": {
                       "cs": "Eye injury"
                   },
                   "time": "2023-02-04T10:00:00",
                   "doctor": {
                       "type": "Doctor",
-                      "@id": "ex:mantis",
+                      "@id": "ex2:mantis",
                       "firstName": {
                           "cs": "Mantis"
                       },
@@ -89,7 +89,7 @@
       },
       {
           "type": "Patient",
-          "@id": "ex:nicomo",
+          "@id": "ex2:nicomo",
           "firstName": {
               "cs": "Nicomo"
           },
@@ -100,14 +100,14 @@
           "appointments": [
               {
                   "type": "Appointment",
-                  "@id": "ex:app2",
+                  "@id": "ex2:app2",
                   "reason": {
                       "cs": "Regular checkup regarding liver disease"
                   },
                   "time": "2023-10-03T14:00:00",
                   "doctor": {
                       "type": "Doctor",
-                      "@id": "ex:mantis",
+                      "@id": "ex2:mantis",
                       "firstName": {
                           "cs": "Mantis"
                       },
@@ -123,7 +123,7 @@
       },
       {
           "type": "Patient",
-          "@id": "ex:leo",
+          "@id": "ex2:leo",
           "firstName": {
               "cs": "Leo"
           },
@@ -134,14 +134,14 @@
           "appointments": [
               {
                   "type": "Appointment",
-                  "@id": "ex:app3",
+                  "@id": "ex2:app3",
                   "reason": {
                       "cs": "Injured leg"
                   },
                   "time": "2023-03-03T09:00:00",
                   "doctor": {
                       "type": "Doctor",
-                      "@id": "ex:finree",
+                      "@id": "ex2:finree",
                       "firstName": {
                           "cs": "Finree"
                       },
@@ -157,7 +157,7 @@
       },
       {
           "type": "Patient",
-          "@id": "ex:felisin",
+          "@id": "ex2:felisin",
           "firstName": {
               "cs": "Felisin"
           },
@@ -168,14 +168,14 @@
           "appointments": [
               {
                   "type": "Appointment",
-                  "@id": "ex:app4",
+                  "@id": "ex2:app4",
                   "reason": {
                       "cs": "Chronic dehydration"
                   },
                   "time": "2023-10-05T16:00:00",
                   "doctor": {
                       "type": "Doctor",
-                      "@id": "ex:lyria",
+                      "@id": "ex2:lyria",
                       "firstName": {
                           "cs": "Lyria"
                       },
@@ -191,7 +191,7 @@
       },
       {
           "type": "Patient",
-          "@id": "ex:heboric",
+          "@id": "ex2:heboric",
           "firstName": {
               "cs": "Heboric"
           },
@@ -202,14 +202,14 @@
           "appointments": [
               {
                   "type": "Appointment",
-                  "@id": "ex:app5",
+                  "@id": "ex2:app5",
                   "reason": {
                       "cs": "Severed hand"
                   },
                   "time": "2023-04-02T15:00:00",
                   "doctor": {
                       "type": "Doctor",
-                      "@id": "ex:mallet",
+                      "@id": "ex2:mallet",
                       "firstName": {
                           "cs": "Mallet"
                       },
