@@ -1,1 +1,6 @@
-.[] | {name, address, doctorCount: (.rooms | map(select(.doctor)) | length)}
+.["@graph"] | .[] |
+{
+    name: (.name.cs // .name.en), 
+    address: (.address.cs // .address.en),
+    doctorCount: (.rooms | map(select(.doctor)) | length)
+}
