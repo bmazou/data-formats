@@ -43,16 +43,11 @@
         "Hospital": "ex:Hospital",
   
         "rooms": {
-            "@reverse": "ex:room"
+            "@reverse": "ex:location"
         },
   
         "doctor": {
-            "@id": "ex:doctor",
-            "@type": "ex:Doctor"
-        },
-        "room": {
-            "@id": "ex:room",
-            "@type": "ex:Room"
+            "@reverse": "ex:residence"
         }
   
     },
