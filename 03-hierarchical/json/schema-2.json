@@ -24,6 +24,34 @@
                 }
             ]
         },
+        "langArray": {
+            "anyOf": [
+                {
+                    "type": "object",
+                    "required": ["cs"],
+                    "properties": {
+                        "cs": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "required": ["en"],
+                    "properties": {
+                        "en": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
 
         "person": {
             "type": "object",
@@ -49,10 +77,7 @@
                 {
                     "properties": {
                         "degree": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/$defs/langString"
-                            }
+                            "$ref": "#/$defs/langArray"
                         }
                     },
                     "required": ["degree"]
@@ -98,10 +123,18 @@
         }
     },
 
-    "type": "array",
+
+    "type": "object",
     "title": "Hospitals",
-    "minItems": 1,
-    "items": {
-        "$ref": "#/$defs/hospital"
+    "properties": {
+        "@context": {
+            "type": "object"
+        },
+        "@graph": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/hospital"
+            }
+        }
     }
 }

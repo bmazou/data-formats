@@ -1,0 +1,198 @@
+{
+    "@context": {
+        "type": "@type",
+        "foaf": "https://xmls.com/foaf/0.1/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "ex": "http://example.org/vocabulary/",
+        "ex2": "https://example.org/resource/",
+  
+        "firstName": {
+            "@id": "foaf:firstName",
+            "@container": "@language" 
+        },
+        "lastName": {
+            "@id": "foaf:familyName",
+            "@container": "@language" 
+        },
+        "degree": {
+            "@id": "ex:degree",
+            "@container": "@language"
+        },
+        "name": {
+            "@id": "ex:name",
+            "@container": "@language"
+        },
+        "address": {
+            "@id": "ex:address",
+            "@container": "@language"
+        },
+        "number": {
+            "@id": "ex:number",
+            "@type": "xsd:integer"
+        },
+        "floor": {
+            "@id": "ex:floor",
+            "@type": "xsd:integer"
+        },
+  
+  
+        "Doctor": "ex:Doctor",
+        "Room": "ex:Room",
+        "Hospital": "ex:Hospital",
+  
+        "rooms": {
+            "@reverse": "ex:room"
+        },
+  
+        "doctor": {
+            "@id": "ex:doctor",
+            "@type": "ex:Doctor"
+        },
+        "room": {
+            "@id": "ex:room",
+            "@type": "ex:Room"
+        }
+  
+    },
+    "@graph": [
+        {
+            "type": "ex:Hospital",
+            "@id": "ex2:hos1", 
+            "name": {
+                "cs": "Zlata Nemocnice"
+            },
+            "address": {
+                "cs": "Ceskoslovenske armady 13, 160 00 Praha 6"
+            },
+            "rooms": [
+                {
+                    "type": "ex:Room",
+                    "@id": "ex2:room1",
+                    "number": 110,
+                    "floor": 0,
+                    "doctor": {
+                        "type": "Doctor",
+                        "@id": "ex2:mantis",
+                        "firstName": {
+                            "cs": "Mantis"
+                        },
+                        "lastName": {
+                            "cs": "Toboggan"
+                        },
+                        "degree": {
+                            "cs": ["MD"]
+                        }
+                    }
+                },
+                {
+                    "type": "ex:Room",
+                    "@id": "ex2:room2",
+                    "number": 120,
+                    "floor": 0,
+                    "doctor": {
+                        "type": "Doctor",
+                        "@id": "ex2:lyria",
+                        "firstName": {
+                            "cs": "Lyria"
+                        },
+                        "lastName": {
+                            "cs": "O'Lagalos"
+                        },
+                        "degree": {
+                            "cs": ["MD", "PHD"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "type": "ex:Hospital",
+            "@id": "ex2:hos2",
+            "name": {
+                "cs": "Cerveny Vrcholek"
+            },
+            "address": {
+                "cs": "Bubenecska 6, 160 00 Praha 6"
+            },
+            "rooms": [
+                {
+                    "type": "ex:Room",
+                    "@id": "ex2:room3",
+                    "number": 210,
+                    "floor": 0,
+                    "doctor": {
+                        "type": "Doctor",
+                        "@id": "ex2:milo",
+                        "firstName": {
+                            "cs": "Milo"
+                        },
+                        "lastName": {
+                            "cs": "Minderbinder"
+                        },
+                        "degree": {
+                            "cs": [ "MPH" ]
+                        }
+                    }
+                },
+                {
+                    "type": "ex:Room",
+                    "@id": "ex2:room4",
+                    "number": 221,
+                    "floor": 1,
+                    "doctor": {
+                        "type": "Doctor",
+                        "@id": "ex2:finree",
+                        "firstName": {
+                            "cs": "Finree"
+                        },
+                        "lastName": {
+                            "cs": "Brock"
+                        },
+                        "degree": {
+                            "cs": ["MD", "MPH"]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "type": "ex:Hospital",
+            "@id": "ex2:hos3", 
+            "name": {
+                "cs": "Nova Sachta"
+            },
+            "address": {
+                "cs": "Budecska 933, 120 00 Praha 2"
+            },
+            "rooms": [
+                {
+                    "type": "ex:Room",
+                    "@id": "ex2:room5",
+                    "number": 310,
+                    "floor": 0,
+                    "doctor": {
+                        "type": "Doctor",
+                        "@id": "ex2:mallet",
+                        "firstName": {
+                            "cs": "Mallet"
+                        },
+                        "lastName": {
+                            "cs": "Bridge"
+                        },
+                        "degree": {
+                            "cs": ["MD"]
+                        }
+                    }
+                },
+                {
+                    "type": "ex:Room",
+                    "@id": "ex2:room6",
+                    "number": 321,
+                    "floor": 1
+                }
+            ]
+        }
+    ]
+}
