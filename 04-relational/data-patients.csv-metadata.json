@@ -1,0 +1,44 @@
+{
+    "@context": [
+        "http://www.w3.org/ns/csvw",
+        {
+            "@language": "en"
+        }
+    ],
+    "@type": "Schema",
+    "@id": "https://example.org/data-patients.csv-metadata.json",
+    "url": "https://example.org/data-patients.csv",
+    "columns": [
+        {
+            "@type": "Column",
+            "name": "personID",
+            "titles": "personID",
+            "dc:description": "ID of a person",
+            "required": true,
+            "datatype": "string",
+            "aboutUrl": "https://example.org/resource/{personID}",
+            "propertyUrl": "rdf:type",
+            "valueUrl": "https://example.org/vocabulary/Patient"
+        },
+        {
+            "@type": "Column",
+            "name": "nationalIdNumber",
+            "titles": "nationalIdNumber",
+            "dc:description": "National ID number of an person",
+            "required": true,
+            "datatype": "number",
+            "aboutUrl": "https://example.org/resource/{personID}",
+            "propertyUrl": "https://example.org/vocabulary/nationalIdNumber"
+        }
+    ],
+    "primaryKey": "personID",
+    "foreignKeys": [
+        {
+            "columnReference": "personID",
+            "reference": {
+                "resource": "https://example.org/data-persons.csv",
+                "columnReference": "personID"
+            }
+        }
+    ]
+}

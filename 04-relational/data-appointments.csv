@@ -1,0 +1,6 @@
+appointmentID,patientID,doctorID,time,reason
+1,caul,mantis,2023-02-04T10:00:00,Eye injury
+2,nicomo,mantis,2023-10-03T14:00:00,Regular checkup regarding liver disease
+3,leo,finree,2023-03-03T09:00:00,Injured leg
+4,felisin,lyria,2023-10-05T16:00:00,Chronic dehydration
+5,heboric,mallet,2023-04-02T15:00:00,Severed hand
