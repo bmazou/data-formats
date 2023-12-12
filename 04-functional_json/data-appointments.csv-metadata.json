@@ -1,0 +1,86 @@
+{
+    "@context": [
+        "http://www.w3.org/ns/csvw",
+        {
+            "@language": "en"
+        }
+    ],
+    "@type": "Table",
+    "@id": "https://example.org/data-appointments.csv-metadata.json",
+    "url": "data-appointments.csv",
+    "tableSchema": {
+        "columns": [
+            {
+                "@type": "Column",
+                "name": "appointmentID",
+                "titles": "appointmentID",
+                "dc:description": "ID of an appointment",
+                "required": true,
+                "datatype": "number",
+                "aboutUrl": "https://example.org/resource/{+appointmentID}",
+                "propertyUrl": "rdf:type",
+                "valueUrl": "https://example.org/vocabulary/Appointment"
+            },
+            {
+                "@type": "Column",
+                "name": "patientID",
+                "titles": "patientID",
+                "dc:description": "ID of an patient",
+                "required": true,
+                "datatype": "string",
+                "aboutUrl": "https://example.org/resource/{+appointmentID}",
+                "propertyUrl": "https://example.org/vocabulary/patient",
+                "valueUrl": "https://example.org/resource/{+patientID}"
+            },
+            {
+                "@type": "Column",
+                "name": "doctorID",
+                "titles": "doctorID",
+                "dc:description": "ID of a doctor",
+                "required": true,
+                "datatype": "string",
+                "aboutUrl": "https://example.org/resource/{+appointmentID}",
+                "propertyUrl": "https://example.org/vocabulary/doctor",
+                "valueUrl": "https://example.org/resource/{+doctorID}"
+            },
+            {
+                "@type": "Column",
+                "name": "time",
+                "titles": "time",
+                "dc:description": "Time of the appointment",
+                "required": true,
+                "datatype": "datetime",
+                "aboutUrl": "https://example.org/resource/{+appointmentID}",
+                "propertyUrl": "https://example.org/vocabulary/time"
+            },
+            {
+                "@type": "Column",
+                "name": "reason",
+                "titles": "reason",
+                "dc:description": "Reason of the appointment",
+                "required": true,
+                "datatype": "string",
+                "lang": "cs",
+                "aboutUrl": "https://example.org/resource/{+appointmentID}",
+                "propertyUrl": "https://example.org/vocabulary/reason"
+            }
+        ],
+        "primaryKey": "appointmentID",
+        "foreignKeys": [
+            {
+                "columnReference": "doctorID",
+                "reference": {
+                    "resource": "data-doctors.csv",
+                    "columnReference": "personID"
+                }
+            },
+            {
+                "columnReference": "patientID",
+                "reference": {
+                    "resource": "data-patients.csv",
+                    "columnReference": "personID"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,67 @@
+{
+    "@context": [
+        "http://www.w3.org/ns/csvw",
+        {
+            "@language": "en"
+        }
+    ],
+    "@type": "Table",
+    "@id": "https://example.org/data-rooms.csv-metadata.json",
+    "url": "data-rooms.csv",
+    "tableSchema": {
+        "columns": [
+            {
+                "@type": "Column",
+                "name": "roomID",
+                "titles": "roomID",
+                "dc:description": "ID of a room",
+                "required": true,
+                "datatype": "number",
+                "aboutUrl": "https://example.org/resource/room{+roomID}",
+                "propertyUrl": "rdf:type",
+                "valueUrl": "https://example.org/vocabulary/Room"
+            },
+            {
+                "@type": "Column",
+                "name": "number",
+                "titles": "number",
+                "dc:description": "Number of a room",
+                "required": true,
+                "datatype": "number",
+                "aboutUrl": "https://example.org/resource/room{+roomID}",
+                "propertyUrl": "https://example.org/vocabulary/number"
+            },
+            {
+                "@type": "Column",
+                "name": "floor",
+                "titles": "floor",
+                "dc:description": "Floor of a room",
+                "required": true,
+                "datatype": "number",
+                "aboutUrl": "https://example.org/resource/room{+roomID}",
+                "propertyUrl": "https://example.org/vocabulary/floor"
+            },
+            {
+                "@type": "Column",
+                "name": "hospitalID",
+                "titles": "hospitalID",
+                "dc:description": "ID of a Hospital that the room is in.",
+                "required": true,
+                "datatype": "number",
+                "aboutUrl": "https://example.org/resource/room{+roomID}",
+                "propertyUrl": "https://example.org/vocabulary/location",
+                "valueUrl": "https://example.org/resource/hos{+hospitalID}"
+            }
+        ],
+        "primaryKey": "roomID",
+        "foreignKeys": [
+            {
+                "columnReference": "hospitalID",
+                "reference": {
+                    "resource": "data-hospitals.csv",
+                    "columnReference": "hospitalID"
+                }
+            }
+        ]
+    }
+}
